@@ -1,7 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-
+void swap(int *a,int *b)
+{
+    int temp = *a;
+    *a=*b;
+    *b=temp;
+}
 void seletionsort(int arry[],int n)
 {
     for(int i=0; i<n-1; i++)
@@ -14,18 +18,10 @@ void seletionsort(int arry[],int n)
                 min_idx = j;
             }
         }
-        swap(arry[min_idx],arry[i]);
+        swap(&arry[min_idx],&arry[i]);
     }
 }
-void swap(int a,int b,int arry[],int n)
-{
-    seletionsort(arry,n);
 
-    int temp = a;
-    a=b;
-    b=temp;
-
-}
 
 void arrayPrint(int arry[],int n)
 {
@@ -37,10 +33,9 @@ void arrayPrint(int arry[],int n)
 
 int main()
 {
-    int arry[]= {5,2,7,-3,1,9},a,b;
+    int arry[]= {-1,2,5,7,9,4};
     int n = sizeof(arry)/sizeof(arry[0]);
     seletionsort(arry,n);
-    swap(a,b,arry,n);
     arrayPrint(arry,n);
 
 
