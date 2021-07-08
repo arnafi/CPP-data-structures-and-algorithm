@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-int push(int arry[],int stack_size,int x,int top)
+int top=-1;
+void push(int arry[],int stack_size,int x)
 {
 
     if(top==(stack_size-1))
@@ -15,11 +15,9 @@ int push(int arry[],int stack_size,int x,int top)
         cin>>x;
 
         arry[top]=x;
-        return top;
-
     }
 }
-int pop(int arry[],int top,int stack_size)
+void pop(int arry[],int stack_size)
 {
 
     if(top==-1)
@@ -28,33 +26,30 @@ int pop(int arry[],int top,int stack_size)
     }
     else
     {
-
         cout<<arry[top]<<" number is removed."<<endl;
         top--;
-        return top ;
     }
 }
-void Top(int arry[],int top,int stack_size)
+void Top(int arry[],int stack_size)
 {
     if(top==-1)
     {
         cout<<"Stack is empty."<<endl;
-        cout<<arry[top];
     }
     else
     {
         cout<<"your top number is: "<<arry[top]<<endl;
     }
 }
-void display(int arry[],int top,int stack_size)
+void display(int arry[],int stack_size)
 {
     if(top==-1)
     {
-        cout<<"Stack is empty."<<endl;
+        cout<<"Queue is empty."<<endl;
     }
     else
     {
-        cout<<"Your all numbers are here:"<<endl;
+        cout<<"Your all Queue numbers are here:"<<endl;
         for(int i=0; i<=top; i++)
         {
             cout<<arry[i]<<endl;
@@ -64,9 +59,9 @@ void display(int arry[],int top,int stack_size)
 
 int main()
 {
-    int stack_size,top=-1;
+    int stack_size;
     int x;//stack elements.
-    cout<<"Enter your stack size: ";
+    cout<<"Enter your queue size: ";
     cin>>stack_size;
     int arry[stack_size];
     for(int i=0;; i++)
@@ -76,19 +71,19 @@ int main()
         cin>>symbol;
         if(symbol=='a')
         {
-           top= push(arry,stack_size,x,top);
+           push(arry,stack_size,x);
         }
         else if(symbol=='b')
         {
-            top = pop(arry,top,stack_size);
+            pop(arry,stack_size);
         }
         else if(symbol=='c')
         {
-            Top(arry,top,stack_size);
+            Top(arry,stack_size);
         }
         else if(symbol=='d')
         {
-            display(arry,top,stack_size);
+            display(arry,stack_size);
         }
         else if(symbol=='e')
         {
@@ -96,3 +91,4 @@ int main()
         }
     }
 }
+
