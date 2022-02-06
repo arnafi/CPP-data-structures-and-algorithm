@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int top=-1;
-void push(int arry[],int stack_size,int x)
+void push(int arry[],int stack_size,int x) //arry[5],5,X
 {
 
     if(top==(stack_size-1))
@@ -10,11 +10,11 @@ void push(int arry[],int stack_size,int x)
     }
     else
     {
-        top++;
-        cout<<"Enter the digit of customer number "<<top <<endl;
+        top++;//0
+        cout<<"Enter the digit of customer number "<<top <<endl;//1
         cin>>x;
 
-        arry[top]=x;
+        arry[top]=x;//arry[0]=1
     }
 }
 void pop(int arry[],int stack_size)
@@ -38,18 +38,18 @@ void Top(int arry[],int stack_size)
     }
     else
     {
-        cout<<"your top number is: "<<arry[top]<<endl;
+        cout<<"your top number is: "<<arry[top]<<endl;//arry[4]=5
     }
 }
 void display(int arry[],int stack_size)
 {
     if(top==-1)
     {
-        cout<<"Queue is empty."<<endl;
+        cout<<"stack is empty."<<endl;
     }
     else
     {
-        cout<<"Your all Queue numbers are here:"<<endl;
+        cout<<"Your all stack numbers are here:"<<endl;
         for(int i=0; i<=top; i++)
         {
             cout<<arry[i]<<endl;
@@ -61,9 +61,9 @@ int main()
 {
     int stack_size;
     int x;//stack elements.
-    cout<<"Enter your queue size: ";
-    cin>>stack_size;
-    int arry[stack_size];
+    cout<<"Enter your stack size: ";
+    cin>>stack_size;//[5]
+    int arry[stack_size];//arry[5]
     for(int i=0;; i++)
     {
         char symbol;
@@ -91,4 +91,3 @@ int main()
         }
     }
 }
-
