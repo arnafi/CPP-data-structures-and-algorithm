@@ -14,14 +14,19 @@ void bubblesort(int arry[],int n)
 }
 void arrayPrint(int arry[],int n){
     for(int i=0;i<n;i++){
-        printf("%d ",arry[i]);
+        cout<< arry[i]<<endl;
     }
 }
 
 int main()
 {
-    int arry[]={5,2,7,-3,1,9};
-    int n = sizeof(arry)/sizeof(arry[0]);
+    int n;
+    cin>>n;
+    int arry[n];
+    for(int i=0;i<n;i++)
+        {
+            cin>>arry[i];
+        }
     bubblesort(arry,n);
     arrayPrint(arry,n);
 
